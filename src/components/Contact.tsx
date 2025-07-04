@@ -125,7 +125,9 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="font-medium text-card-foreground">Email</p>
-                      <p className="text-muted-foreground text-sm">radhakrishna.thete@example.com</p>
+                      <a href="mailto:theteradhakrishna@gmail.com" className="text-primary hover:text-primary-hover text-sm transition-colors">
+                        theteradhakrishna@gmail.com
+                      </a>
                     </div>
                   </div>
                   
@@ -156,11 +158,15 @@ const Contact = () => {
                 <h3 className="text-xl font-semibold mb-4 text-card-foreground">Connect Online</h3>
                 
                 <div className="flex space-x-4">
-                  <Button variant="outline" size="sm" className="flex-1">
-                    GitHub
+                  <Button variant="outline" size="sm" className="flex-1" asChild>
+                    <a href="https://github.com/radhakrishna1210" target="_blank" rel="noopener noreferrer">
+                      GitHub
+                    </a>
                   </Button>
-                  <Button variant="outline" size="sm" className="flex-1">
-                    LinkedIn
+                  <Button variant="outline" size="sm" className="flex-1" asChild>
+                    <a href="https://www.linkedin.com/in/radhakrishna-thete-33640832b" target="_blank" rel="noopener noreferrer">
+                      LinkedIn
+                    </a>
                   </Button>
                 </div>
                 

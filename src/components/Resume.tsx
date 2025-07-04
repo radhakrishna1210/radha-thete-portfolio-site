@@ -2,8 +2,7 @@ import { Button } from '@/components/ui/button';
 
 const Resume = () => {
   const handleDownload = () => {
-    // Placeholder for resume download functionality
-    alert('Resume download feature will be implemented when you upload your resume PDF!');
+    window.open('/lovable-uploads/8e6caf30-7d80-478f-b3f1-0db17d07b8f4.png', '_blank');
   };
 
   return (
