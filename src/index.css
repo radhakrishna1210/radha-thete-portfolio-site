@@ -2,39 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Modern Portfolio Design System - AI/ML Tech Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 247 51% 98%;
+    --foreground: 222 84% 4.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 222 84% 4.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 222 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Modern blue-teal gradient palette for tech/AI theme */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 217 91% 55%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 15% 95%;
+    --secondary-foreground: 220 9% 46%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 197 71% 73%;
+    --accent-foreground: 220 9% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
 
     --radius: 0.5rem;
 
@@ -94,6 +97,41 @@ All colors MUST be HSL.
   }
 }
 
+    /* Gradients for modern AI/ML theme */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted)));
+    
+    /* Shadows for depth */
+    --shadow-soft: 0 4px 6px -1px hsl(var(--primary) / 0.1);
+    --shadow-hover: 0 10px 15px -3px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 0 20px hsl(var(--primary) / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 220 13% 9%;
+    --foreground: 220 15% 95%;
+    --card: 220 13% 11%;
+    --card-foreground: 220 15% 95%;
+    --popover: 220 13% 11%;
+    --popover-foreground: 220 15% 95%;
+    --primary: 217 91% 65%;
+    --primary-foreground: 220 13% 9%;
+    --secondary: 220 13% 15%;
+    --secondary-foreground: 220 15% 85%;
+    --muted: 220 13% 15%;
+    --muted-foreground: 220 9% 65%;
+    --accent: 197 71% 60%;
+    --accent-foreground: 220 13% 9%;
+    --border: 220 13% 20%;
+    --input: 220 13% 20%;
+    --ring: 217 91% 65%;
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -101,5 +139,40 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero gradient background */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  /* Card with soft shadow */
+  .card-elevated {
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+  }
+  
+  .card-elevated:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+  }
+  
+  /* Skill progress bars */
+  .skill-bar {
+    background: var(--gradient-primary);
+    border-radius: 9999px;
+    transition: var(--transition-smooth);
+  }
+  
+  /* Glowing effect for CTA buttons */
+  .glow-on-hover:hover {
+    box-shadow: var(--shadow-glow);
   }
 }
