@@ -24,15 +24,32 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Create mailto link with form data
+      const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      );
+      const mailtoLink = `mailto:theteradhakrishna@gmail.com?subject=${subject}&body=${body}`;
+      
+      // Open default email client
+      window.location.href = mailtoLink;
+      
       toast({
-        title: "Message Sent!",
-        description: "Thank you for reaching out. I'll get back to you soon!",
+        title: "Opening Email Client",
+        description: "Your default email application will open with the message pre-filled.",
       });
+      
       setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to open email client. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (

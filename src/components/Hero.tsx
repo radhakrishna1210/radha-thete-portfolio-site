@@ -22,11 +22,13 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center text-white">
-          {/* Profile Image Placeholder */}
-          <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-white/20 backdrop-blur-sm border-4 border-white/30 flex items-center justify-center">
-            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-white/40 to-white/20 flex items-center justify-center">
-              <span className="text-2xl font-bold text-white">RT</span>
-            </div>
+          {/* Profile Image */}
+          <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-white/20 backdrop-blur-sm border-4 border-white/30 overflow-hidden">
+            <img 
+              src="/lovable-uploads/4c3c0269-7307-42fa-ac01-3935e557d156.png" 
+              alt="Radhakrishna Thete"
+              className="w-full h-full object-cover"
+            />
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
