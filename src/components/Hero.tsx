@@ -1,21 +1,19 @@
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-bg.jpg';
-
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+  return <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+      backgroundImage: `url(${heroImage})`
+    }}>
         <div className="absolute inset-0 hero-gradient opacity-90"></div>
       </div>
       
@@ -24,11 +22,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center text-white">
           {/* Profile Image */}
           <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-white/20 backdrop-blur-sm border-4 border-white/30 overflow-hidden">
-            <img 
-              src="/lovable-uploads/4c3c0269-7307-42fa-ac01-3935e557d156.png" 
-              alt="Radhakrishna Thete"
-              className="w-full h-full object-cover"
-            />
+            <img src="/lovable-uploads/4c3c0269-7307-42fa-ac01-3935e557d156.png" alt="Radhakrishna Thete" className="w-full h-full object-cover" />
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
@@ -45,19 +39,10 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              onClick={() => scrollToSection('projects')}
-              size="lg"
-              className="glow-on-hover bg-white text-primary hover:bg-white/90 font-semibold px-8 py-3"
-            >
+            <Button onClick={() => scrollToSection('projects')} size="lg" className="glow-on-hover bg-white text-primary hover:bg-white/90 font-semibold px-8 py-3">
               View My Projects
             </Button>
-            <Button 
-              onClick={() => scrollToSection('contact')}
-              variant="outline"
-              size="lg"
-              className="border-white/30 text-white hover:bg-white/10 hover:text-white font-semibold px-8 py-3"
-            >
+            <Button onClick={() => scrollToSection('contact')} variant="outline" size="lg" className="border-white/30 hover:bg-white/10 font-semibold px-8 py-3 text-[#4e85ed]">
               Contact Me
             </Button>
           </div>
@@ -70,8 +55,6 @@ const Hero = () => {
           <div className="w-1 h-3 bg-white/70 rounded-full mt-2"></div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
