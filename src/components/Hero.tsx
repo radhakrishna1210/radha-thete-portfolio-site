@@ -42,7 +42,7 @@ const Hero = () => {
             <Button onClick={() => scrollToSection('projects')} size="lg" className="glow-on-hover bg-white text-primary hover:bg-white/90 font-semibold px-8 py-3">
               View My Projects
             </Button>
-            <Button onClick={() => scrollToSection('contact')} variant="outline" size="lg" className="border-white/30 hover:bg-white/10 font-semibold px-8 py-3 text-[#4e85ed]">
+            <Button onClick={() => scrollToSection('contact')} size="lg" className="glow-on-hover bg-white text-primary hover:bg-white/90 font-semibold px-8 py-3">
               Contact Me
             </Button>
           </div>
